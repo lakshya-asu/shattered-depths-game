@@ -1,0 +1,28 @@
+{
+    "events": [
+        {
+            "event_id": "dialogic_001",
+            "text": "[Caster]",
+            "type": 0
+        },
+        {
+            "event_id": "dialogic_002",
+            "text": "Impossible... the storm... fades...",
+            "type": 0
+        },
+        {
+            "event_id": "dialogic_003",
+            "text": "You have broken what should not break.",
+            "type": 0
+        },
+        {
+            "event_id": "dialogic_004",
+            "text": "But know this... there are forces far greater than I.",
+            "type": 0
+        }
+    ],
+    "metadata": {
+        "dialogic-version": "1.5",
+        "file": "caster_defeat.json"
+    }
+}

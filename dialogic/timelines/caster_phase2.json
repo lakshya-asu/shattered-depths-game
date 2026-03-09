@@ -1,0 +1,28 @@
+{
+    "events": [
+        {
+            "event_id": "dialogic_001",
+            "text": "[Caster]",
+            "type": 0
+        },
+        {
+            "event_id": "dialogic_002",
+            "text": "You've earned my attention.",
+            "type": 0
+        },
+        {
+            "event_id": "dialogic_003",
+            "text": "Now, let me show you REAL power.",
+            "type": 0
+        },
+        {
+            "event_id": "dialogic_004",
+            "text": "Rise, my servants!",
+            "type": 0
+        }
+    ],
+    "metadata": {
+        "dialogic-version": "1.5",
+        "file": "caster_phase2.json"
+    }
+}
