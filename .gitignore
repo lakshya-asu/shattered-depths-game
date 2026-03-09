@@ -1,0 +1,15 @@
+# Godot-specific ignores
+.import/
+
+# Godot editor data
+*.translation
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+*.swp
+*.swo
+*~

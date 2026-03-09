@@ -1,0 +1,33 @@
+{
+    "events": [
+        {
+            "event_id": "dialogic_001",
+            "text": "[Caster]",
+            "type": 0
+        },
+        {
+            "event_id": "dialogic_002",
+            "text": "How... quaint. A mortal with a gun.",
+            "type": 0
+        },
+        {
+            "event_id": "dialogic_003",
+            "text": "Do you know what I am?",
+            "type": 0
+        },
+        {
+            "event_id": "dialogic_004",
+            "text": "I am the storm made flesh.",
+            "type": 0
+        },
+        {
+            "event_id": "dialogic_005",
+            "text": "Your bullets will find nothing but air.",
+            "type": 0
+        }
+    ],
+    "metadata": {
+        "dialogic-version": "1.5",
+        "file": "caster_intro.json"
+    }
+}

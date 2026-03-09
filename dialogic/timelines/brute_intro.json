@@ -1,0 +1,13 @@
+{
+	"events": [
+		{"event_id": "dialogic_001", "text": "[Brute]", "type": 0},
+		{"event_id": "dialogic_002", "text": "Another fool enters my domain...", "type": 0},
+		{"event_id": "dialogic_003", "text": "I've crushed a thousand like you.", "type": 0},
+		{"event_id": "dialogic_004", "text": "Your weapons are toys. Your courage, misplaced.", "type": 0},
+		{"event_id": "dialogic_005", "text": "Come then. Let me show you what REAL power looks like!", "type": 0}
+	],
+	"metadata": {
+		"dialogic-version": "1.5",
+		"file": "brute_intro.json"
+	}
+}

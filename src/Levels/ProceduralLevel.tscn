@@ -1,0 +1,152 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://src/Levels/ProceduralLevel.gd" type="Script" id=1]
+[ext_resource path="res://src/pick_ups/LittleCoin.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/pick_ups/BigCoin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/textures/bg.png" type="Texture" id=4]
+[ext_resource path="res://src/player/MapPlayer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/font/fantasque-sans-mono/FantasqueSansMono-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/music/mainTheme.wav" type="AudioStream" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 20, 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 12
+outline_size = 1
+use_mipmaps = true
+font_data = ExtResource( 6 )
+
+[node name="ProceduralLevel" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+smallCoin_ref = ExtResource( 2 )
+bigCoin_ref = ExtResource( 3 )
+
+[node name="TileMap" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="obstacles" type="StaticBody2D" parent="." groups=["ground"]]
+
+[node name="floor" type="CollisionPolygon2D" parent="obstacles"]
+position = Vector2( 0, -320 )
+polygon = PoolVector2Array( 0, 490, 320, 490, 320, 510, 0, 510 )
+
+[node name="walls_ceiling" type="CollisionPolygon2D" parent="obstacles"]
+polygon = PoolVector2Array( 0, 190, 0, 0, 320, 0, 320, 190, 350, 190, 350, -30, -30, -30, -30, 190 )
+
+[node name="coins" type="Node2D" parent="."]
+
+[node name="entities" type="Node2D" parent="."]
+
+[node name="MapPlayer" parent="entities" instance=ExtResource( 5 )]
+position = Vector2( 30, 155 )
+z_index = 1
+
+[node name="bullets" type="Node2D" parent="."]
+
+[node name="UI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Points" type="Label" parent="UI"]
+margin_left = 14.0
+margin_top = 8.0
+margin_right = 50.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Points:"
+
+[node name="value" type="Label" parent="UI/Points"]
+margin_left = 42.0
+margin_right = 62.0
+margin_bottom = 13.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+align = 2
+
+[node name="Waves" type="Label" parent="UI"]
+margin_left = 230.0
+margin_top = 8.0
+margin_right = 286.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Room:"
+
+[node name="value" type="Label" parent="UI/Waves"]
+margin_left = 42.0
+margin_right = 80.0
+margin_bottom = 13.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1"
+align = 2
+
+[node name="Health" type="Label" parent="UI"]
+margin_left = 14.0
+margin_top = 22.0
+margin_right = 56.0
+margin_bottom = 35.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.8, 0.1, 0.1, 1 )
+text = "HP:"
+
+[node name="value" type="Label" parent="UI/Health"]
+margin_left = 24.0
+margin_right = 44.0
+margin_bottom = 13.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.8, 0.1, 0.1, 1 )
+text = "4"
+align = 2
+
+[node name="Weapon" type="Label" parent="UI"]
+margin_left = 110.0
+margin_top = 8.0
+margin_right = 170.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.1, 0.1, 0.8, 1 )
+text = "Gun:"
+
+[node name="value" type="Label" parent="UI/Weapon"]
+margin_left = 32.0
+margin_right = 100.0
+margin_bottom = 13.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.1, 0.1, 0.8, 1 )
+text = "Pistol"
+align = 2
+
+[node name="Missiles" type="Label" parent="UI"]
+margin_left = 110.0
+margin_top = 22.0
+margin_right = 170.0
+margin_bottom = 35.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.8, 0.4, 0, 1 )
+text = "Missiles:"
+
+[node name="value" type="Label" parent="UI/Missiles"]
+margin_left = 54.0
+margin_right = 74.0
+margin_bottom = 13.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.8, 0.4, 0, 1 )
+text = "3"
+align = 2
+
+[node name="music_stream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -11.107
+autoplay = true
+
+[connection signal="finished" from="music_stream" to="." method="_on_music_stream_finished"]

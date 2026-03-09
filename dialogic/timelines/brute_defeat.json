@@ -1,0 +1,28 @@
+{
+    "events": [
+        {
+            "event_id": "dialogic_001",
+            "text": "[Brute]",
+            "type": 0
+        },
+        {
+            "event_id": "dialogic_002",
+            "text": "No... this cannot be...",
+            "type": 0
+        },
+        {
+            "event_id": "dialogic_003",
+            "text": "You... are no ordinary fool.",
+            "type": 0
+        },
+        {
+            "event_id": "dialogic_004",
+            "text": "Remember my name... when the next one comes for you...",
+            "type": 0
+        }
+    ],
+    "metadata": {
+        "dialogic-version": "1.5",
+        "file": "brute_defeat.json"
+    }
+}
